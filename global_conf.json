@@ -6,7 +6,8 @@
     "pin_nss": 8,
     "pin_dio0": 6,
     "pin_rst": 3,
-    "pin_led1":4
+    "pin_led1":4,
+    "spi_channel": 0
   },
   "gateway_conf":
   {

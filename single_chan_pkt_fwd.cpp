@@ -85,7 +85,7 @@ using namespace rapidjson;
 
 #define BASE64_MAX_LENGTH 341
 
-static const int SPI_CHANNEL = 0;
+static int SPI_CHANNEL = 0;
 
 bool sx1272 = true;
 
@@ -776,9 +776,11 @@ void LoadConfiguration(string configurationFile)
             RST = confIt->value.GetUint();
           } else if (key.compare("pin_led1") == 0) {
             Led1 = confIt->value.GetUint();
+          } else if (key.compare("spi_channel") == 0) {
+            SPI_CHANNEL = confIt->value.GetUint();
           }
-        }
       }
+    }
 
     } else if (objectType.compare("gateway_conf") == 0) {
       const Value& gateway_conf = fileIt->value;
